@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//https://www.youtube.com/watch?v=ot52NHWEtn4&list=PL5jb9EteFAOAIr7tjUpz1n-_szVSx8JVz&index=9
+
 class ResponsiveWidget extends StatelessWidget {
   const ResponsiveWidget({super.key, this.desktop, this.tablet, this.mobile});
 
