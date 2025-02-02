@@ -1,20 +1,20 @@
-import 'package:appnest_app/nav/routes.dart';
-import 'package:appnest_app/nav/routes_middleware.dart';
-import 'package:appnest_app/view/apps_screen.dart';
-import 'package:appnest_app/view/contact_screen.dart';
-import 'package:appnest_app/view/gallery_screen.dart';
-import 'package:appnest_app/view/home_screen.dart';
+import 'package:appnest_app/config/routes/routes.dart';
+import 'package:appnest_app/config/routes/routes_middleware.dart';
+import 'package:appnest_app/presentation/pages/apps_screen.dart';
+import 'package:appnest_app/presentation/pages/contact_screen.dart';
+import 'package:appnest_app/presentation/pages/gallery_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
-import '../view/error_screen.dart';
-import '../view/responsive_home_screen.dart';
+import '../../presentation/pages/appnest_layout.dart';
+import '../../presentation/pages/error_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.homeRoute:
-        return MaterialPageRoute(builder: (context) => ResponsiveHomeScreen());
+        return MaterialPageRoute(builder: (context) => AppNestApp());
+        // return MaterialPageRoute(builder: (context) => ResponsiveHomeScreen());
       case AppRoutes.appsRoute:
         return MaterialPageRoute(builder: (context) => AppsScreen());
       case AppRoutes.galleryRoute:
@@ -29,7 +29,8 @@ class AppRouter {
   static final List<GetPage> appPages = [
     GetPage(
         name: AppRoutes.homeRoute,
-        page: () => ResponsiveHomeScreen(),
+        page: () => AppNestApp(),
+        // page: () => ResponsiveHomeScreen(),
         middlewares: [AppRoutesMiddleware()]),
     GetPage(
         name: AppRoutes.appsRoute,

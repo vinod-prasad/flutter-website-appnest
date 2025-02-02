@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'nav/router.dart';
-import 'nav/routes.dart';
-
+import 'config/routes/router.dart';
+import 'config/routes/routes.dart';
+import 'config/theme/app_theme.dart';
+import 'config/theme/theme_controller.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    Get.put(ThemeController());
+
     return GetMaterialApp(
       title: "App Nest",
-      themeMode: ThemeMode.light,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      // themeMode: ThemeMode.dark,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       onGenerateRoute: AppRouter.generateRoute,
       initialRoute: AppRoutes.homeRoute,
       getPages: AppRouter.appPages,
