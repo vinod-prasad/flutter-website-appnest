@@ -33,16 +33,15 @@ class DesktopHome extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeController themeController = Get.find<ThemeController>();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('AppNest (Mobile)'),
-        leading: IconButton(
+      appBar: AppBar(title: const Text('AppNest (Web)'), actions: [
+        IconButton(
             onPressed: () {
               themeController.changeTheme();
             },
             icon: Obx(() => Get.find<ThemeController>().isDarkMode.value
                 ? Icon(Icons.light_mode)
                 : Icon(Icons.dark_mode))),
-      ),
+      ]),
       body: Column(
         children: [
           //Banner
@@ -65,13 +64,14 @@ class TabletHome extends StatelessWidget {
     ThemeController themeController = Get.find<ThemeController>();
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+        title: const Text('AppNest (Tablet)'),
+          actions: [  IconButton(
             onPressed: () {
               themeController.changeTheme();
             },
             icon: Obx(() => themeController.isDarkMode.value
                 ? Icon(Icons.light_mode)
-                : Icon(Icons.dark_mode))),
+                : Icon(Icons.dark_mode)))],
       ),
       body: Column(
         children: [
@@ -95,13 +95,14 @@ class MobileHome extends StatelessWidget {
     ThemeController themeController = Get.find<ThemeController>();
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
+        title: const Text('AppNest (Mobile)'),
+          actions: [  IconButton(
             onPressed: () {
               themeController.changeTheme();
             },
             icon: Obx(() => themeController.isDarkMode.value
                 ? Icon(Icons.light_mode)
-                : Icon(Icons.dark_mode))),
+                : Icon(Icons.dark_mode)))],
       ),
       body: Column(
         children: [

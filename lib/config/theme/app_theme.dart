@@ -7,7 +7,7 @@ final ThemeData lightTheme = ThemeData(
   // primarySwatch: Colors.deepOrange,
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.orange,
+      seedColor: Colors.blue,
       brightness: Brightness.light,
       primary: LightThemeColors.primary,
       onPrimary: LightThemeColors.onPrimary,

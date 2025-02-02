@@ -8,13 +8,16 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import '../../presentation/pages/appnest_layout.dart';
 import '../../presentation/pages/error_screen.dart';
+import '../../presentation/pages/home_screen.dart';
+import '../../presentation/pages/responsive_home_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.homeRoute:
-        return MaterialPageRoute(builder: (context) => AppNestApp());
+        // return MaterialPageRoute(builder: (context) => AppNestApp());
         // return MaterialPageRoute(builder: (context) => ResponsiveHomeScreen());
+        return MaterialPageRoute(builder: (context) => HomeScreen());
       case AppRoutes.appsRoute:
         return MaterialPageRoute(builder: (context) => AppsScreen());
       case AppRoutes.galleryRoute:
@@ -29,8 +32,9 @@ class AppRouter {
   static final List<GetPage> appPages = [
     GetPage(
         name: AppRoutes.homeRoute,
-        page: () => AppNestApp(),
+        // page: () => AppNestApp(),
         // page: () => ResponsiveHomeScreen(),
+        page: () => HomeScreen(),
         middlewares: [AppRoutesMiddleware()]),
     GetPage(
         name: AppRoutes.appsRoute,

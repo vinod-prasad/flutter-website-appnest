@@ -15,6 +15,7 @@ class App extends StatelessWidget {
     Get.put(ThemeController());
 
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "App Nest",
       // themeMode: ThemeMode.dark,
       theme: lightTheme,

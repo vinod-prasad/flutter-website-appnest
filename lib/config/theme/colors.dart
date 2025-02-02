@@ -23,6 +23,6 @@ class DarkThemeColors{
   static const onSecondary = Colors.black;
   static const error = Colors.red;
   static const onError = Colors.red;
-  static const surface = Colors.black;
-  static const onSurface = Colors.grey;
+  static const surface = Colors.grey;
+  static const onSurface = Colors.black;
 }
